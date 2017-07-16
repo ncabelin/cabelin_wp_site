@@ -1,0 +1,223 @@
+/* 
+
+Color Scheme :
+--------------
+Darker Green #314135
+Dark Green #5b800d
+Light Green #ccd8af
+Yellow #97974a
+
+*/
+
+body {
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+h1, .tel {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h3, h4 {
+	color: #8f8f47;
+}
+
+.logo {
+	height: 100px;
+	margin: 10px 0;
+}
+
+.btn-success {
+	background-color: #5b800d;
+}
+
+hr {
+	border-top: 1px solid #5b800d;
+	margin: 0;
+}
+
+.navbar {
+	z-index: 100;
+}
+
+.affix {
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.navbar-default {
+	background-color: #104312;
+}
+
+#navigation li a {
+	border-bottom: 4px solid rgba(0,0,0,0);
+	padding-top: 19px;
+	color: white;
+}
+
+#navigation li a:hover {
+	border-bottom: 4px solid #5b800d;
+	color: #97974a;
+}
+
+.navbar {
+	margin-bottom: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar:hover {
+  background-color: #97974a;
+}
+
+.navbar-toggle {
+	border: 0;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: rgba(0,0,0,0);
+}
+
+.fa-mike {
+	padding: 40px;
+	font-size: 4em;
+}
+
+#hero, #about {
+	background: url('../img/ignasi_pattern_s.png') repeat ;
+	padding-top: 30px;
+	min-height: 100%;
+	padding-bottom: 30px;
+}
+
+#hero hr {
+	padding-bottom: 20px;
+}
+
+#hero-image {
+	color: #3e3d3d;
+}
+
+.carousel-img {
+	width: auto;
+}
+
+.img_us {
+	height: 100px;
+	border-radius: 50%;
+}
+
+#services {
+	padding: 40px 5px;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.circle-icon {
+	height: 80px;
+	width: 80px;
+	padding: 25px;
+	border-radius: 50%;
+	background-color: #194c78;
+	color: white;
+	font-size: 2em;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+.f-icon {
+	text-align: center;
+}
+
+#services div .row:before,
+#services div .row:after,
+#services .container:before,
+#services .container:after {
+   content: normal; // IE doesn't support `initial`
+   display: inline-block;
+}
+
+.row.fix {
+  display: flex;
+  flex-wrap: wrap;
+  width:100%; /*not always necessary*/
+}
+
+.service p {
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+.price {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#pricing {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#pricing .well {
+	background: url('../img/ignasi_pattern_s.png') repeat ;
+}
+
+#pricing h4, #pricing .price {
+	text-align: center;
+}
+
+.footer_logo {
+	height: 50px;
+	margin: 40px auto;
+}
+
+.footer-nav {
+	margin: 40px;
+}
+
+.footer-nav a {
+	margin: 15px;
+}
+
+.d-block {
+	height: 200px;
+	width: 600px;
+}
+
+@media screen and (max-width:500px) {
+	#navigation li a {
+		text-align: center;
+	}
+
+	.footer-nav a {
+		display: block;
+	}
+
+	.circle-icon {
+		height: 40px;
+		width: 40px;
+		font-size: 1em;
+		text-align: center;
+		padding: 10px;
+		line-height: 25px;
+	}
+
+	.dev {
+		margin: 20px;
+	}
+}
