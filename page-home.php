@@ -18,6 +18,7 @@ $screenshot_1 = get_field('screenshot_1');
 $screenshot_2 = get_field('screenshot_2');
 $screenshot_3 = get_field('screenshot_3');
 
+$contact_form = get_field('contact_form');
 
 get_header(); ?>
 <section id="hero" class="clearfix">
@@ -73,25 +74,7 @@ get_header(); ?>
         <div class="well" id="contact">
           <h3 class="text-center"><strong>Contact Us</strong></h3>
           <p>Tell us your web needs and we'll give you a quote.</p>
-          <form class="second-form">
-            <div class="form-group">
-              <label for="name" class="sr-only">Name</label>
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label for="email" class="sr-only">E-mail</label>
-              <input type="text" class="form-control" placeholder="E-mail">
-            </div>
-            <div class="form-group">
-              <label for="email" class="sr-only">Phone</label>
-              <input type="phone" class="form-control" placeholder="Phone">
-            </div>
-            <div class="form-group">
-              <label for="message" class="sr-only">Message</label>
-              <textarea placeholder="Message" class="form-control" rows="8"></textarea>
-            </div>
-            <button class="btn btn-success btn-block btn-lg">Submit</button>
-          </form>
+          <?php echo $contact_form; ?>
         </div>
       </div>
     </div>
