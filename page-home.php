@@ -12,13 +12,20 @@
  * @package Cabelin
  */
 
+$hero_title = get_field('hero_title');
+$hero_description = get_field('hero_description');
+$screenshot_1 = get_field('screenshot_1');
+$screenshot_2 = get_field('screenshot_2');
+$screenshot_3 = get_field('screenshot_3');
+
+
 get_header(); ?>
 <section id="hero" class="clearfix">
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1 class="text-center">Web &amp; Mobile Software Solutions</h1><hr>
-        <p class="lead">We are a Los Angeles based web development studio who can create affordable, customized, &amp; mobile-friendly websites and web applications.</p>
+        <h1 class="text-center"><?php echo $hero_title; ?></h1><hr>
+        <p class="lead"><?php echo $hero_description; ?></p>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -30,23 +37,23 @@ get_header(); ?>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="assets/img/site_1_mindwelder.jpg" alt="Mindwelder" class="carousel-img">
+              <img src="<?php echo $screenshot_1['url']; ?>" alt="<?php echo $screenshot_1['alt']; ?>" class="carousel-img">
               <div class="carousel-caption">
-                <p>www.mindwelder.com</p>
+                <p><?php echo $screenshot_1['alt']; ?></p>
               </div>
             </div>
 
             <div class="item">
-              <img src="assets/img/site_2_speaking.jpg" alt="Speaking Child" class="carousel-img">
+              <img src="<?php echo $screenshot_2['url']; ?>" alt="<?php echo $screenshot_2['alt']; ?>" class="carousel-img">
               <div class="carousel-caption">
-                <p>www.speakingchild.com</p>
+                <p><?php echo $screenshot_2['alt']; ?></p>
               </div>
             </div>
 
             <div class="item">
-              <img src="assets/img/site_3_prog.jpg" alt="Progressive Steps" class="carousel-img">
+              <img src="<?php echo $screenshot_3['url']; ?>" alt="<?php echo $screenshot_3['alt']; ?>" class="carousel-img">
               <div class="carousel-caption">
-                <p>www.progressivestepsca.com</p>
+                <p><?php echo $screenshot_3['alt']; ?></p>
               </div>
             </div>
           </div>
