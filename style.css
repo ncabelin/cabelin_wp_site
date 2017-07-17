@@ -936,6 +936,7 @@ h3, h4 {
 hr {
 	border-top: 1px solid #5b800d;
 	margin: 0;
+	background-color: rgba(0,0,0,0);
 }
 
 .navbar {
