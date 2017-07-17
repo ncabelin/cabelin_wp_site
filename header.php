@@ -25,9 +25,11 @@
   <!-- Latest bootstrap compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
-
-	<?php wp_head(); ?>
+	<?php 
+		wp_head(); 
+		$logo = get_field('logo');
+  	$telephone = get_field('telephone');
+	?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -36,8 +38,8 @@
 
 	<div id="navigation">
 	  <div class="container">
-	    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/cabelinslogo.jpg" class="logo">
-	    <h3 class="pull-right">Call us now : <i class="fa fa-mobile fa-lg faa-ring animated"></i><br><a href="tel:+1(323)835-1448" class="tel">+1 (323) 835-1448</a></h3>
+	    <img src="<?php echo $logo['url'];?>" class="logo">
+	    <h3 class="pull-right">Call us now : <i class="fa fa-mobile fa-lg faa-ring animated"></i><br><a href="tel:<?php echo $telephone;?>" class="tel"><?php echo $telephone;?></a></h3>
 	  </div>
 	  <nav class="navbar navbar-default" data-spy="affix" data-offset-top="120">
 	      <div class="container">
