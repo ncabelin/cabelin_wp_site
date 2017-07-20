@@ -18,8 +18,9 @@ $screenshot_1 = get_field('screenshot_1');
 $screenshot_2 = get_field('screenshot_2');
 $screenshot_3 = get_field('screenshot_3');
 
-$contact_form = get_field('contact_form');
+$contact_form = get_field('contact_formed');
 
+$pricing = get_field('pricing_title');
 get_header(); ?>
 <section id="hero" class="clearfix">
   <div class="container">
@@ -89,54 +90,20 @@ get_header(); ?>
       </div>
     </div>
     <div class="row fix">
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-star circle-icon text-center" aria-hidden="true"></i>
-        <h4 class="text-center">Online Presence</h4>
-        <p>In this day and age, all businesses need to have a web presence. Customized websites with the right tools can easily complement and enhance how you generate income. We can provide you with different options like setting up features such as e-commerce, online appointment scheduling and so on. The opportunities to expand your web presence and ergo your wallet are endless. 
-        </p>
+
+    <?php 
+      $loop = new WP_Query( array('post_type' => 'features', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+    <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+
+        <div class="col-sm-6 service">
+          <div class="f-icon">
+            <i class="fa fa-<?php the_field('features_icon'); ?> circle-icon text-center" aria-hidden="true"></i>
+            <h4 class="text-center"><?php the_title(); ?></h4>
+            <?php the_field('features_description'); ?>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-commenting-o circle-icon text-center" aria-hidden="true"></i>
-        <h4 class="text-center">Content Management System</h4>
-        <p>We create fully customized Wordpress themes for websites. This Content Management System powers 25% of the web today and is used by various big companies like CNN, TechCrunch, Sony Music. We will set it up securely with https(SSL certificate issued)  and make it easy to edit the contents of your web pages, there would be no need to hire someone to make small changes to your website, like fixing typos, setting up new prices or adding features of your business.
-        </p>
-        </div>
-      </div>
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-twitter circle-icon text-center" aria-hidden="true"></i>
-        </div>
-        <h4 class="text-center">Social Media and Search Engines</h4>
-        <p>We can help set up your social media presence through Facebook, Twitter and LinkedIn. Furthermore we set you up with Google Plus, Bing and Yelp to help maximize your SEO (Search Engine Optimization) and marketing efforts. Almost everybody has a social media presence nowadays and most likely use Google or Bing search. All of these will help your customers find you easily.
-        </p>
-      </div>
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-mobile circle-icon text-center" aria-hidden="true"></i>
-        </div>
-        <h4 class="text-center">Mobile</h4>
-        <p>Your website will be created using modern mobile-friendly solutions, meaning that if a prospective customer is viewing your website, he is not going to be frustrated trying to zoom in at what he wants to read. The interaction that takes place when people use mobile devices requires good readability and UI/UX design which is a standard in all our websites.
-        </p>
-      </div>
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-lock circle-icon text-center" aria-hidden="true"></i>
-        </div>
-        <h4 class="text-center">Domain Name, Hosting and custom E-mail</h4>
-        <p>We can set you up with a hosting provider (such as GoDaddy, Bluehost, HostGator). We can also set up professional looking email addresses (e.g. you@yoursite.com) with different options such as forwarding or hosting on Gmail etc. depending on your budget.
-        </p>
-      </div>
-      <div class="col-sm-6 service">
-        <div class="f-icon">
-          <i class="fa fa-paint-brush circle-icon text-center" aria-hidden="true"></i>
-        </div>
-        <h4 class="text-center">Graphics Design</h4>
-        <p>We provide Logo Design for businesses. We also offer Professional Photography, which can include product photography, on-site place of business photography for an additional fee if you are in the greater Los Angeles area. These images can be used in your website, brochures and calling cards.
-        </p>
-      </div>
+
+    <?php endwhile; wp_reset_query(); ?>
     </div>
   </div>
 </section>
@@ -145,66 +112,24 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center">Pricing &amp; Packages</h1>
+        <h1 class="text-center"><?php echo $pricing; ?></h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 price-bubble">
-        <h4>BASIC</h4>
-        <div class="price">$599</div>
-        <div class="well">
-          <ul>
-            <li>5 page dynamic or 7 page static website</li>
-            <li>E-mail forwarding setup</li>
-            <li>Shared Hosting and SSL Certificate setup</li>
-            <li>Wordpress setup</li>
-            <li>Contact form setup</li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="col-md-6 price-bubble">
-        <h4>BUSINESS</h4>
-        <div class="price">$799</div>
-        <div class="well">
-          <ul>
-            <li>All Basic features plus...</li>
-            <li>7 page website</li>
-            <li>1 logo design</li>
-            <li>1 blogging / articles platform</li>
-            <li>Custom theme development</li>
-          </ul>
-        </div>
-      </div>
+      <?php 
+        $loop = new WP_Query( array('post_type' => 'pricing', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+      <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-      <div class="col-md-6 price-bubble">
-        <h4>E-commerce</h4>
-        <div class="price">$999</div>
-        <div class="well">
-          <ul>
-            <li>All Business features plus...</li>
-            <li>E-commerce Wordpress website</li>
-            <li>Sell your products online securely</li>
-            <li>2 logo designs</li>
-            <li>Woo-commerce setup</li>
-          </ul>
-        </div>
-      </div>
+          <div class="col-md-6 price-bubble">
+            <h4><?php the_title(); ?></h4>
+            <div class="price"><?php the_field('price'); ?></div>
+            <div class="well">
+              <?php the_field('pricing_details'); ?>
+            </div>
+          </div>
 
-      <div class="col-md-6 price-bubble">
-        <h4>Full Application or E-commerce</h4>
-        <div class="price">$1,199 - $3,499</div>
-        <div class="well">
-          <ul>
-            <li>Pricing dependent on app complexity</li>
-            <li>1 fullstack Python Flask / Django web application</li>
-            <li>2 logo designs</li>
-            <li>Custom Admin page</li>
-            <li>Ubuntu Server setup with Digital Ocean / AWS</li>
-            <li>SSL Certificate setup</li>
-          </ul>
-        </div>
-      </div>
+      <?php endwhile; wp_reset_query(); ?>
     </div>
   </div>
 </section>
@@ -221,17 +146,19 @@ get_header(); ?>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 dev">
-        <img src="assets/img/me.jpg" class="img_us center-block">
-        <h4 class="text-center">Mike Cabelin</h4>
-        <p class="text-center">Lead Web Designer / Front-end Developer</p>
-        <div class="text-center"><a href="http://mike.cabelin.com" target="_blank"><small>more info..</small></a></div>
-      </div>
-      <div class="col-md-6 dev">
-        <img src="assets/img/art.jpg" class="img_us center-block">
-        <h4 class="text-center">Art Cabelin</h4>
-        <p class="text-center">Web Developer / Back-end Developer</p>
-      </div>
+      <?php 
+        $loop = new WP_Query( array('post_type' => 'members', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+      <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+
+          <div class="col-md-6 dev">
+            <a href="<?php the_field('link'); ?>" target="_blank">
+              <img src="<?php the_field('image'); ?>" class="img_us center-block">
+            <h4 class="text-center"><?php the_title(); ?></h4>
+            </a>
+            <p class="text-center"><?php the_field('description'); ?></p>
+          </div>
+
+      <?php endwhile; wp_reset_query(); ?>
     </div>
   </div>
 </section>
