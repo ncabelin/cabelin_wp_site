@@ -53,16 +53,15 @@
 	          </button>
 	        </div>
 
-	        <?php
-	        	wp_nav_menu( array(
-	        			'menu_location' => 'primary',
-	        			'container' => 'nav',
-	        			'container_class' => 'navbar-collapse collapse',
-	        			'menu_class' => 'nav navbar-nav navbar-right'
-	        		)
-	        	);
-
-	        ?>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#navigation" id="nav_home">HOME</a></li>
+	            <li><a href="#services" id="nav_services">SERVICES</a></li>
+	            <li><a href="#about" id="nav_services">ABOUT US</a></li>
+	            <li><a href="#contact" id="nav_cont">CONTACT</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
 	      </div><!-- /.container -->
 	    </nav>
 	</div>
